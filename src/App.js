@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import React, { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="form">
+        <Stack direction="row" spacing={2}>
+          <TextField id="outlined-basic" label="name" variant="outlined" />
+          <TextField id="outlined-basic" label="email" variant="outlined" />
+          <Button variant="contained" style={{ backgroundColor: "#192a56" }}>
+            Add Record
+          </Button>
+        </Stack>
+      </div>
     </div>
   );
 }
